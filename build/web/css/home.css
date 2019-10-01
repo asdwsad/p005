@@ -1,0 +1,103 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-10-2019, 19:07:25
+    Author     : dattv
+*/
+
+body{
+    background-color: #c2baaf; 
+
+}
+
+.container{
+    max-width: 980px;
+    background-color: white;
+    margin: -5px auto 70px;
+    box-shadow: 0 0 24px rgba(0,0,0,.8);
+    border-radius: 10px;
+}
+.header{
+    background-color: #edeae1;   
+    /*height:*/ 
+}
+
+.header .title{
+    color: #6d5160;
+    font-size: 50px;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+
+.header .subtitle{
+    color: #6d5160;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: -30px;
+}
+
+.header .menu {
+    background-color: #edeae1 ; 
+    width: 50% ; 
+    height : 30px ; 
+    padding-left: 25px;
+}
+
+.content{
+    background-color: white;
+}
+
+.link-banner {
+    color: black;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.block1{
+    float: left;
+    width: 75%;
+}
+
+.block1 .content-header{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.block2{
+    width: 25%;
+    float: left;
+}
+
+.block2 .share ul{
+    list-style-type: none;
+}
+
+.block2 .share{
+    width: 200px;
+    height: 130px;
+    box-shadow: 0 0 24px rgba(0,0,0,.8);
+    border-radius: 10px;
+}
+
+.block2 .share-title{
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+.block2 .share-link{
+     text-decoration: none;
+}
+
+.clear{
+    clear: both;
+}
+
+.footer{
+    border-top: solid 1px;
+    height: 50px;
+}

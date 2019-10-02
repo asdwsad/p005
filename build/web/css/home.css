@@ -10,7 +10,6 @@ and open the template in the editor.
 
 body{
     background-color: #c2baaf; 
-
 }
 
 .container{
@@ -67,6 +66,85 @@ body{
     margin-left: 20px;
 }
 
+.block1 .entry{
+    border-bottom: dashed 6px pink;
+    width: 98%;
+    margin-left: 20px;
+  
+}
+
+.block1 .header-entry{
+    /*padding-left: 17px;*/
+    width: 100%;
+
+}
+
+.block1 .entry-name{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: -50px;
+}
+
+.block1 .entry-image{
+    float: left;
+    margin-left: 55px;
+    width:38%;
+
+}
+
+.block1 .entry-image img{
+     width: 250px;
+}
+
+.block1 .photo{
+    margin-left: 55px;
+   margin-bottom: 20px;
+}
+
+.block1 .photo img{
+    width:100%;
+    border-radius: 10px; 
+}
+
+.block1 .entry-content{
+    margin: 0px 0px 0px 55px;
+}
+
+.block1 .entry-content p{
+    font-size: 20px;
+}
+
+.block1 .first{
+    width: 14%;
+}
+
+.block1 .mid{
+    width :71%;
+}
+.block1 .last{
+   text-align: right;
+   width :25%;
+}
+
+.block1 .createdate{
+    float: left;
+    font-size: 15px;
+    font-weight: normal;
+    
+}
+
+.block1 blockquote{
+     text-align: right;
+    font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid #000;
+    border-left: 0;
+    margin-right: 0px;
+    font-size: 20px;
+}
+
 .block2{
     width: 25%;
     float: left;
@@ -90,9 +168,12 @@ body{
     font-size: 20px;
 }
 .block2 .share-link{
-     text-decoration: none;
+    text-decoration: none;
 }
 
+.overview{
+    text-align: center;
+}
 .clear{
     clear: both;
 }
@@ -100,4 +181,5 @@ body{
 .footer{
     border-top: solid 1px;
     height: 50px;
+    margin-top: 30px;
 }

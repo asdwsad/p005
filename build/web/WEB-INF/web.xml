@@ -19,7 +19,7 @@
     <env-entry>
         <env-entry-name>dbName</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
-        <env-entry-value>P0004</env-entry-value>
+        <env-entry-value>blogger</env-entry-value>
     </env-entry>
     <env-entry>
         <env-entry-name>portNumber</env-entry-name>

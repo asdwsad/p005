@@ -5,8 +5,8 @@
  */
 package controller;
 
-import Model.MyBlogDAO;
-import Model.Post;
+
+import dao.EntryDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Entry;
 
 
 public class MyBlogController extends HttpServlet {
@@ -33,24 +34,24 @@ public class MyBlogController extends HttpServlet {
             throws ServletException, IOException {
         try {
             response.setContentType("text/html;charset=UTF-8");
-            MyBlogDAO myBlogDAO = new MyBlogDAO();
-            ArrayList<Post> listPosts = null;
-
-            listPosts = myBlogDAO.get3PostsByOderDate();
-            
-            Post simplePost = null;
-            Post quotePost = null;
-            Post photoPost = null;
-            
-            simplePost = myBlogDAO.getPostsByOderDate(1);
-            quotePost = myBlogDAO.getPostsByOderDate(2);
-            photoPost = myBlogDAO.getPostsByOderDate(3);
-            
-            request.setAttribute("simplePost", simplePost);
-            request.setAttribute("quotePost", quotePost);
-            request.setAttribute("photoPost", photoPost);
-            
-            request.setAttribute("listPosts", listPosts);
+            EntryDao myBlogDAO = new EntryDao();
+            ArrayList<Entry> listPosts = null;
+//
+//            listPosts = myBlogDAO.get3PostsByOderDate();
+//            
+//            Post simplePost = null;
+//            Post quotePost = null;
+//            Post photoPost = null;
+//            
+//            simplePost = myBlogDAO.getPostsByOderDate(1);
+//            quotePost = myBlogDAO.getPostsByOderDate(2);
+//            photoPost = myBlogDAO.getPostsByOderDate(3);
+//            
+//            request.setAttribute("simplePost", simplePost);
+//            request.setAttribute("quotePost", quotePost);
+//            request.setAttribute("photoPost", photoPost);
+//            
+//            request.setAttribute("listPosts", listPosts);
             request.getRequestDispatcher("MyBlog.jsp").forward(request, response);
         } catch (Exception ex) {
             response.sendRedirect("Error.jsp?error=" + ex);

@@ -18,6 +18,7 @@ body{
     margin: -5px auto 70px;
     box-shadow: 0 0 24px rgba(0,0,0,.8);
     border-radius: 10px;
+    height: 100%;
 }
 .header{
     background-color: #edeae1;   
@@ -159,6 +160,8 @@ body{
     height: 130px;
     box-shadow: 0 0 24px rgba(0,0,0,.8);
     border-radius: 10px;
+    margin-left: 30px;
+
 }
 
 .block2 .share-title{
@@ -172,6 +175,7 @@ body{
 }
 
 .overview{
+    margin-top: 30px;
     text-align: center;
 }
 .clear{
@@ -182,4 +186,22 @@ body{
     border-top: solid 1px;
     height: 50px;
     margin-top: 30px;
+}
+
+.footer .totalpage{
+    border: solid 0 #000;
+    background: #fff;
+    font-size: 14.4px;
+    font-family: Arial,Helvetica,Arial,sans-serif;
+    line-height: 14.4px;
+    padding: 2px 2px 1px;
+    margin: 3px 2px 0 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px #595959;
+    float: left;
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+    width: 10px;
+    position: relative;
 }

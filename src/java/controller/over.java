@@ -5,16 +5,23 @@
  */
 package controller;
 
-
-//import Model.Post;
+import dao.EntryDao;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Entry;
 
-
-public class OverviewController_1 extends HttpServlet {
+/**
+ *
+ * @author dattv
+ */
+@WebServlet(name = "over", urlPatterns = {"/over"})
+public class over extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -27,40 +34,10 @@ public class OverviewController_1 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            response.setContentType("text/html;charset=UTF-8");
-//            ArrayList<Post> arrPosts = new ArrayList<>();
-//            MyBlogDAO myBlogDAO = new MyBlogDAO();
-//            arrPosts = myBlogDAO.getAllPosts();
-//            int size = arrPosts.size();
-//            int page = Integer.parseInt(request.getParameter("pageNum"));
-//            request.setAttribute("pageNum", page);
-//            ArrayList<Post> listPage = myBlogDAO.getByPage(page);
-//            ArrayList<Mouth> mouthList = new ArrayList<>();
-//            SimpleDateFormat sdf = new SimpleDateFormat("MMMM  yyyy");
-//            if (!listPage.isEmpty()) {
-//                Mouth m = new Mouth(listPage.get(0).getPostID(), 
-//                        sdf.format(listPage.get(0).getDate()));
-//                mouthList.add(m);
-//                int i = 0;
-//                for (Post post : listPage) {
-//                    String dateMouth = sdf.format(post.getDate());
-//                    if (!mouthList.get(i).getDate().equals(dateMouth)){
-//                        mouthList.add(new Mouth(post.getPostID(), dateMouth));
-//                        i++;
-//                    }
-//                }
-//            }
-            
-            
-//            request.setAttribute("size", size);
-//            request.setAttribute("mouthList", mouthList);
-//            request.setAttribute("listPage", listPage);
-
-            request.getRequestDispatcher("overview.jsp").forward(request, response);
-        } catch (Exception ex) {
-             response.sendRedirect("Error.jsp?error=" + ex);
-        }
+//          EntryDao dao=new EntryDao();
+//        List<Entry> list=dao.get3EntryByOderDate();
+//        request.setAttribute("list", list);
+       request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

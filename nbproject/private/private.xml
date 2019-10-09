@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/H:/Disk%20G/Summer%202018/learn/Lab%20Web/bloger/web/css/overview.css</file>
+            <file>file:/H:/Disk%20G/Summer%202018/learn/Lab%20Web/bloger/web/css/home.css</file>
+            <file>file:/H:/Disk%20G/Summer%202018/learn/Lab%20Web/bloger/web/jsp/overview.jsp</file>
+            <file>file:/H:/Disk%20G/Summer%202018/learn/Lab%20Web/bloger/src/java/controller/OverviewController.java</file>
+            <file>file:/H:/Disk%20G/Summer%202018/learn/Lab%20Web/bloger/src/java/dao/EntryDao.java</file>
+        </group>
     </open-files>
 </project-private>

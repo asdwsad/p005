@@ -5,13 +5,20 @@
  */
 package controller;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
+import dao.EntryDao;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Entry;
+import model.MonthSoft;
 
 /**
  *
@@ -31,19 +38,68 @@ public class OverviewController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet OverviewController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet OverviewController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        EntryDao dao = new EntryDao();
+//        List<Entry> list = dao.getEntryByOderDate();
+
+//        -----------------------------------------------------
+        int size = 0;
+        int total=9456;
+        request.setAttribute("total", total);
+
+        size = dao.getSizeEntry();
+        request.setAttribute("size", size);
+
+        String Spage = request.getParameter("page");
+
+        int page = 1;
+
+        if (Spage != null) {
+            try {
+                page = Integer.parseInt(Spage);
+            } catch (Exception e) {
+                    response.sendRedirect("jsp/error.jsp");
+            }
+
         }
+
+        int numPerPage = 3;
+        int allOfPage;
+
+        if (size % numPerPage == 0) {
+            allOfPage = size / numPerPage;
+        } else {
+            allOfPage = size / numPerPage + 1;
+        }
+
+        request.setAttribute("maxpage", allOfPage);
+
+        List<Entry> list = dao.getEntryByPage( page,numPerPage);
+
+        request.setAttribute("list", list);
+
+        request.setAttribute("page", page);
+
+//-----------------------------------------------------------
+
+        List<MonthSoft> monthlist = new ArrayList();
+        SimpleDateFormat formatDate = new SimpleDateFormat("MMMM yyyy");
+
+        if (!list.isEmpty()) {
+            MonthSoft m = new MonthSoft(formatDate.format(list.get(0).getCreateDate()), list.get(0).getId());
+            monthlist.add(m);
+            int i = 0;
+            for (Entry e : list) {
+                String createdate = formatDate.format(e.getCreateDate());
+                
+                if (!monthlist.get(i).getCreatedate().equals(createdate)) {
+                    monthlist.add(new MonthSoft(createdate, e.getId()));
+                    i++;
+                }
+            }
+        }
+        request.setAttribute("monthlist", monthlist);
+        request.getRequestDispatcher("jsp/overview.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

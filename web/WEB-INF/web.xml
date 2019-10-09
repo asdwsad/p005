@@ -38,7 +38,7 @@
     </env-entry>
     <welcome-file-list>
         <welcome-file>
-            EntryController
+            OverviewController
         </welcome-file>
     </welcome-file-list>
 </web-app>
